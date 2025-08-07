@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Kuashik Dada 🎉</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #fdfcfb, #e2d1c3);
+      overflow: hidden;
+    }
+    .page {
+      display: none;
+      height: 100vh;
+      width: 100%;
+      padding: 60px 20px;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .active {
+      display: flex;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    h1 {
+      font-size: 2.8rem;
+      color: #ff4081;
+      margin-bottom: 25px;
+      border-right: 3px solid #ff4081;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 4s steps(30, end) forwards, blink .75s step-end infinite;
+    }
+    @keyframes typing {
+      to { width: 100% }
+    }
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+    .msg-box {
+      background: rgba(255,255,255,0.88);
+      padding: 25px;
+      border-radius: 14px;
+      max-width: 720px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      font-size: 1.2rem;
+      color: #333;
+      line-height: 1.7;
+      text-align: left;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .nav-btns {
+      margin-top: 30px;
+    }
+    .nav-btns button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      margin: 0 10px;
+      background: #ff4081;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .nav-btns button:hover {
+      background: #e91e63;
+    }
+
+    .krishna-img {
+      max-width: 240px;
+      margin: 20px 0;
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    /* Confetti */
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: red;
+      animation: fall linear infinite;
+      opacity: 0.6;
+    }
+    @keyframes fall {
+      0% { transform: translateY(-100vh); }
+      100% { transform: translateY(100vh); }
+    }
+
+    /* Balloons */
+    .balloon {
+      position: absolute;
+      width: 60px;
+      height: 80px;
+      background-color: #f06292;
+      border-radius: 50% 50% 45% 45%;
+      animation: float 6s ease-in-out infinite;
+      z-index: -1;
+    }
+    .balloon::before {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      width: 2px;
+      height: 20px;
+      background: #555;
+      transform: translateX(-50%);
+    }
+    @keyframes float {
+      0% { transform: translateY(0) translateX(0); }
+      50% { transform: translateY(-30px) translateX(15px); }
+      100% { transform: translateY(0) translateX(0); }
+    }
+
+    footer {
+      position: absolute;
+      bottom: 15px;
+      width: 100%;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      .msg-box { font-size: 1rem; padding: 20px; }
+      .krishna-img { max-width: 180px; }
+    }
+
+    /* Quotes animation */
+    .msg-box p, .msg-box b, .msg-box i {
+      animation: fadeIn 2s ease-in-out;
+    }
+    .krishna-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+}
+
+.overlay {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.2); /* less white = clearer image */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  backdrop-filter: blur(1px); /* minimal blur */
+}
+
+.krishna-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Page 1 -->
+  <div class="page active" id="page1">
+    <h1>Happy Birthday Kaushik Dada 🎉</h1>
+    <div class="msg-box">
+      You've been my guide, my inspiration, and my strongest support.<br>
+      On your special day, I wish you health, happiness, peace and success in all you do. You truly deserve the best. Keep inspiring all of us! 💫
+    </div>
+    <div class="nav-btns">
+      <button onclick="nextPage()">Next ➡️</button>
+    </div>
+  </div>
+
+<!-- Page 2 -->
+<div class="page" id="page2" style="position: relative; overflow: hidden;">
+  <!-- Full-page background image -->
+  <img src="SHREE KRISHNA.jpg" class="krishna-bg" alt="Shree Krishna Background">
+
+  <!-- Overlay for readability -->
+  <div class="overlay"></div>
+
+  <!-- Content -->
+  <div class="krishna-content">
+    <h1 style="z-index: 2;">Bhagavad Gita Wisdom 🕉️</h1>
+    <div class="msg-box" style="z-index: 2;">
+      <b>कर्मण्येवाधिकारस्ते मा फलेषु कदाचन ।</b><br>
+      <i>You have a right to perform your duties, but not to the results.</i><br><br>
+
+      <b2️><b> उद्यमेन हि सिद्ध्यन्ति कार्याणि न मनोरथैः ।</b><br>
+      <i>Work gets accomplished through effort, not merely by desire.</i><br><br>
+
+      <b> आत्मनं न अवसादयेत् ।</b><br>
+      <i>Do not lower yourself. You are your own best friend and enemy.</i><br><br>
+
+      <b> स्थितप्रज्ञस्य लक्षणम् – समदुःखसुखं धीरम्</b><br>
+      <i>The wise remain balanced in joy and sorrow alike.</i>
+    </div>
+    <div class="nav-btns" style="z-index: 2;">
+      <button onclick="prevPage()">⬅️ Back</button>
+      <button onclick="nextPage()">Next ➡️</button>
+    </div>
+  </div>
+</div>
+
+  <!-- Page 3 -->
+  <div class="page" id="page3">
+    <h1>Thank You Dada 💙</h1>
+    <div class="msg-box">
+      You always guide me when I’m confused, lift me up when I fall, and believe in me more than I do myself.<br><br>
+      Your words, support, and calmness always motivate me to do better. I’m truly lucky to have a brother like you — full of strength and wisdom.<br><br>
+      May you continue to rise, serve, and shine. Always here for you. 🙏
+    </div>
+    <div class="nav-btns">
+      <button onclick="prevPage()">⬅️ Back</button>
+    </div>
+  </div>
+
+  <footer>Made with ❤️ and Shree Krishna’s blessings — just for you</footer>
+
+  <script>
+    let currentPage = 1;
+    const totalPages = 3;
+
+    function showPage(n) {
+      for (let i = 1; i <= totalPages; i++) {
+        document.getElementById('page' + i).classList.remove('active');
+      }
+      document.getElementById('page' + n).classList.add('active');
+      currentPage = n;
+    }
+
+    function nextPage() {
+      if (currentPage < totalPages) showPage(currentPage + 1);
+    }
+
+    function prevPage() {
+      if (currentPage > 1) showPage(currentPage - 1);
+    }
+
+    // Confetti & Balloons
+    for (let i = 0; i < 80; i++) {
+      const confetti = document.createElement('div');
+      confetti.classList.add('confetti');
+      confetti.style.left = Math.random() * 100 + 'vw';
+      confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+      confetti.style.background = `hsl(${Math.random() * 360}, 70%, 60%)`;
+      document.body.appendChild(confetti);
+    }
+
+    for (let i = 0; i < 6; i++) {
+      const balloon = document.createElement('div');
+      balloon.classList.add('balloon');
+      balloon.style.left = Math.random() * 90 + 'vw';
+      balloon.style.top = Math.random() * 80 + 'vh';
+      balloon.style.backgroundColor = `hsl(${Math.random() * 360}, 80%, 70%)`;
+      document.body.appendChild(balloon);
+    }
+  </script>
+</body>
+</html>
